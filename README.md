@@ -1,7 +1,10 @@
 # Tech.Care
 
 Run this codes on your termial to view the project
-`` npm install ``
+```npm install
+```
 - press Enter
-`` npm run dev ``
+```
+npm run dev
+```
 - press Enter
