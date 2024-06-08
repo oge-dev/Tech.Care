@@ -1,7 +1,8 @@
 # Tech.Care
 
 Run this codes on your termial to view the project
-```npm install
+```
+npm install
 ```
 - press Enter
 ```
