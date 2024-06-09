@@ -42,8 +42,6 @@ html {
 }
 body {
   font-family: var(--unnamed-font-family-manrope);
-}
-#root {
   max-width: 100%;
 }
 /* // <uniquifier>: Use a unique and descriptive class name

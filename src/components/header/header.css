@@ -9,7 +9,10 @@
   align-items: center;
   height: 72px;
   opacity: 1;
+  padding: 0 40px;
 }
-.logo {
-  margin: 0 0 0 50px;
+.practitioner-settings{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

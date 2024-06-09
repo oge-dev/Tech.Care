@@ -1,30 +1,25 @@
-import React from 'react'
-import './header.css'
-import Logo from "./logo/logo"
-import Menu from "./menu/menu"
-import Practitioner from "./PractitionerSettings/practitioner"
-import Settings from "./PractitionerSettings/settings"
+import React from "react";
+import "./header.css";
+import Logo from "./logo/logo";
+import Menu from "./menu/menu";
+import Practitioner from "./PractitionerSettings/practitioner";
+import Settings from "./PractitionerSettings/settings";
 
 const Header = () => {
   return (
-    <div className='Header-content'>
+    <div className="Header-content">
       <div className="logo">
-        <Logo/>
+        <Logo />
       </div>
       <div className="menu">
-        <Menu/>
+        <Menu />
       </div>
       <div className="practitioner-settings">
-      <div className="practitioner">
-        <Practitioner/>
+        <Practitioner />
+        <Settings />
       </div>
-      <div className="settings">
-        <Settings/>
-      </div>
-      </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
