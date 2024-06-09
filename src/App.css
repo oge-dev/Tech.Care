@@ -8,25 +8,17 @@
   background: #f6f7f8 0% 0% no-repeat padding-box;
   opacity: 1;
 }
-.Header {
-  margin: 18px;
-  max-width: 1564px;
-  height: 72px;
-  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  border-radius: 70px;
-  opacity: 1;
-}
-.Patients-DiagnosHistoryList-ProfileLabresults {
+
+.Patients-DiagnosisHistory-DiagnosticList-Profile-LabResults {
   display: flex;
   flex-direction: row;
 }
-.Patients {
-  flex-grow: 2;
+/* .Patients {
+  width: 367px;
 }
 .Diagnosis-History-List {
-  flex-grow: 3;
+  width: 766px;
 }
 .Profile-LabResults {
-  flex-grow: 2;
-}
+  width: 367px;
+} */

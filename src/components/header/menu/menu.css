@@ -1,0 +1,30 @@
+.menu-content {
+  display: flex;
+  column-gap: 40px;
+  font-family: var(--unnamed-font-family-manrope);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-bold);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-19);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+}
+.Menu-Items {
+  opacity: 1;
+  height: 17px;
+}
+.Overview {
+  max-width: 16px;
+}
+.Patients {
+  max-width: 24px;
+}
+.Schedule {
+  width: 15px;
+}
+.Message {
+  max-width: 19px;
+}
+.Transactions {
+  max-width: 22px;
+}

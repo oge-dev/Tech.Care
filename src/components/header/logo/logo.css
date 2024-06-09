@@ -1,0 +1,9 @@
+.Logo-content {
+  max-width: 211px;
+  height: 48px;
+  opacity: 1;
+}
+.Logo-content img {
+  width: 100%;
+  height: 100%;
+}

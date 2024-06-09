@@ -10,29 +10,16 @@ import LabResults from "./components/lab-results/labResults.jsx";
 function App() {
   return (
     <div className="App">
-      <div className="Header">
-        <Header />
-      </div>
-      <div className="Patients-DiagnosHistoryList-ProfileLabresults">
-        <div className="Patients">
-          <Patients />
-        </div>
-
-        <div className="Diagnosis-History-List">
-          <div className="Diagnosis-History">
-            <DiagnosisHistory />
-          </div>
-          <div className="Diagnostic-List">
-            <DiagnosticList />
-          </div>
+      <Header />
+      <div className="Patients-DiagnosisHistory-DiagnosticList-Profile-LabResults">
+        <Patients />
+        <div className="DiagnosisHistory-DiagnosticList">
+          <DiagnosisHistory />
+          <DiagnosticList />
         </div>
         <div className="Profile-LabResults">
-          <div className="Profile">
-            <Profile />
-          </div>
-          <div className="Lab-Results">
-            <LabResults />
-          </div>
+          <Profile />
+          <LabResults />
         </div>
       </div>
     </div>
