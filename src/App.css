@@ -12,13 +12,14 @@
 .Patients-DiagnosisHistory-DiagnosticList-Profile-LabResults {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
-/* .Patients {
-  width: 367px;
-}
-.Diagnosis-History-List {
-  width: 766px;
+
+.DiagnosisHistory-DiagnosticList {
+  flex-basis: 766px;
+  /* flex-grow: 3; */
 }
 .Profile-LabResults {
-  width: 367px;
-} */
+  flex-basis: 367px;
+  /* flex-grow: 2; */
+}

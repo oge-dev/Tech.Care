@@ -1,9 +1,39 @@
-import React from 'react'
+import React from "react";
+import { PatientsData } from "./Patients-data/PatientsData";
+import "./patients.css";
+import HorizontalDottedIcon from "../../assets/Horizontal-dotted-line.png";
 
 const Patients = () => {
   return (
-    <div>patients</div>
-  )
-}
+    <div className="Patients-content">
+      {PatientsData.map((patients_data) => (
+        <div className="Avatar-Name-genderAge_wrapper">
+          <div className="Avatar-Name-genderAge" key={patients_data.id}>
+            <img
+              src={patients_data.patientsAvatar}
+              alt="Avatar"
+              className="patientsAvatar"
+            />
+            <div className="Name-genderAge">
+              <div className="firstName-lastName">
+                <span>{patients_data.firstName}</span>&nbsp;
+                <span>{patients_data.lastName}</span>
+              </div>
+              <div className="gender-age">
+                <span>{patients_data.gender}</span>,&nbsp;
+                <span>{patients_data.age}</span>
+              </div>
+            </div>
+          </div>
+          <img
+            src={HorizontalDottedIcon}
+            alt="Horizontal dotted line"
+            className="Horizontal-dotted-line"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default Patients
+export default Patients;

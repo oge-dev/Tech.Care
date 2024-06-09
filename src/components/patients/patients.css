@@ -1,35 +1,58 @@
-.Practitioner {
+.Patients-content {
+  flex-basis: 367px;
+  width: 367px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  opacity: 1;
+  padding: 20px;
+  margin: 18px;
+}
+.Avatar-Name-genderAge_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 32px;
+}
+.Avatar-Name-genderAge {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-right: 1px solid var(--unnamed-color-ededed);
-  padding-right: 25px;
 }
-.Practitioner img {
-  max-width: 44px;
-  height: 44px;
-  margin-right: 8px;
+.Avatar-Name-genderAge .patientsAvatar {
+  max-width: 48px;
+  height: 48px;
+  margin-right: 12px;
 }
-.Practitioner .Avatar-text p:nth-of-type(1) {
+.firstName-lastName span {
   font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold)
     var(--unnamed-font-size-14) / var(--unnamed-line-spacing-19)
     var(--unnamed-font-family-manrope);
   letter-spacing: var(--unnamed-character-spacing-0);
   color: var(--unnamed-color-072635);
   text-align: left;
-  font: normal normal bold 14px/19px var(--unnamed-font-family-manrope);
+  font: normal normal bold 14px/19px Manrope;
   letter-spacing: 0px;
+  color: #072635;
   opacity: 1;
   line-height: 19px;
 }
-.Practitioner .Avatar-text p:nth-of-type(2) {
+.gender-age span {
   font: var(--unnamed-font-style-normal) normal
     var(--unnamed-font-weight-normal) var(--unnamed-font-size-14) /
     var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
   letter-spacing: var(--unnamed-character-spacing-0);
   color: var(--unnamed-color-707070);
   text-align: left;
+  font: normal normal normal 14px/19px Manrope;
   letter-spacing: 0px;
+  color: #707070;
   opacity: 1;
   line-height: 19px;
+}
+.Horizontal-dotted-line {
+  width: 18px;
+  height: 4px;
 }
