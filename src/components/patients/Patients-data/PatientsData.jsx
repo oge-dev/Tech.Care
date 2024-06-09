@@ -45,4 +45,12 @@ export  const PatientsData = [
         gender: "Female",
         age: "56"
       },
+      {
+        id: "0006",
+        patientsAvatar: "",
+        firstName: "",
+        lastName: "",
+        gender: "",
+        age: ""
+      },
 ]

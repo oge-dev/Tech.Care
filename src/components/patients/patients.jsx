@@ -7,8 +7,8 @@ const Patients = () => {
   return (
     <div className="Patients-content">
       {PatientsData.map((patients_data) => (
-        <div className="Avatar-Name-genderAge_wrapper">
-          <div className="Avatar-Name-genderAge" key={patients_data.id}>
+        <div className="Avatar-Name-genderAge_wrapper" key={patients_data.id}>
+          <div className="Avatar-Name-genderAge">
             <img
               src={patients_data.patientsAvatar}
               alt="Avatar"
