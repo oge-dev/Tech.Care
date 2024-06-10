@@ -2,10 +2,15 @@ import React from "react";
 import { PatientsData } from "./Patients-data/PatientsData";
 import "./patients.css";
 import HorizontalDottedIcon from "../../assets/Horizontal-dotted-line.png";
+import SearchIcon from "../../assets/search-icon.png";
 
 const Patients = () => {
   return (
     <div className="Patients-content">
+      <div className="Patients_header">
+        <h1>Patients</h1>
+        <img src={SearchIcon} alt="search icon" className="search-icon" />
+      </div>
       {PatientsData.map((patients_data) => (
         <div className="Avatar-Name-genderAge_wrapper" key={patients_data.id}>
           <div className="Avatar-Name-genderAge">

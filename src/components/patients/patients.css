@@ -5,16 +5,47 @@
   background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 16px;
   opacity: 1;
-  padding: 20px;
+  padding: 20px 0;
   margin: 18px;
+}
+.Patients_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 0 20px;
+}
+.Patients_header h1 {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800)
+    var(--unnamed-font-size-24) / var(--unnamed-line-spacing-33)
+    var(--unnamed-font-family-manrope);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+  text-align: left;
+  font: normal normal 800 24px/33px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  opacity: 1;
+}
+.Patients_header .search-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 1;
 }
 .Avatar-Name-genderAge_wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  margin-top: 32px;
+padding: 18px 20px;
+cursor: pointer;
+  /* margin-top: 32px; */
+}
+.Avatar-Name-genderAge_wrapper:hover, .Avatar-Name-genderAge_wrapper:active{
+  background: var(--activestate_bg_2) 0% 0% no-repeat padding-box;
+background: #D8FCF7 0% 0% no-repeat padding-box;
+opacity: 1;
 }
 .Avatar-Name-genderAge {
   display: flex;
