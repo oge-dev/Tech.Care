@@ -1,42 +1,42 @@
 import React from "react";
-import { PatientsData } from "./Patients-data/PatientsData";
-import "./patients.css";
+import Image from "../img";
+import { PatientsData } from "../PatientsData";
 import HorizontalDottedIcon from "../../assets/Horizontal-dotted-line.png";
 import SearchIcon from "../../assets/search-icon.png";
+import "./patients.css";
 
 const Patients = () => {
   return (
-    <div className="Patients-content">
-      <div className="Patients_header">
+    <div className="patients-container">
+      <div className="patients-header">
         <h1>Patients</h1>
-        <img src={SearchIcon} alt="search icon" className="search-icon" />
+        <Image src={SearchIcon} alt={"search icon"} />
       </div>
-      {PatientsData.map((patients_data) => (
-        <div className="Avatar-Name-genderAge_wrapper" key={patients_data.id}>
-          <div className="Avatar-Name-genderAge">
-            <img
-              src={patients_data.patientsAvatar}
-              alt="Avatar"
-              className="patientsAvatar"
-            />
-            <div className="Name-genderAge">
-              <div className="firstName-lastName">
-                <span>{patients_data.firstName}</span>&nbsp;
-                <span>{patients_data.lastName}</span>
-              </div>
-              <div className="gender-age">
-                <span>{patients_data.gender}</span>,&nbsp;
-                <span>{patients_data.age}</span>
+      <div className="patients-content">
+        {PatientsData.map((patients_data) => (
+          <div className="patients" key={patients_data.id}>
+            <div className="patients-item">
+              <Image
+                src={patients_data.profile_picture}
+                alt={"profile_picture"}
+              />
+              <div className="name-gender-age">
+                <p>{patients_data.name}</p>
+                <p>
+                  <span>{patients_data.gender}</span>,&nbsp;
+                  <span>{patients_data.age}</span>
+                </p>
               </div>
             </div>
+            <div className=".Horizontal-dotted-line">
+              <Image
+                src={HorizontalDottedIcon}
+                alt={"Horizontal dotted line"}
+              />
+            </div>
           </div>
-          <img
-            src={HorizontalDottedIcon}
-            alt="Horizontal dotted line"
-            className="Horizontal-dotted-line"
-          />
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

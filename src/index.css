@@ -44,25 +44,3 @@ body {
   font-family: var(--unnamed-font-family-manrope);
   max-width: 100%;
 }
-/* // <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 200 to 800
-.manrope-<uniquifier> {
-  font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
-
-/* 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

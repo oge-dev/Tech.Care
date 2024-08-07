@@ -1,4 +1,9 @@
 .App {
+  background: #f6f7f8 0% 0% no-repeat padding-box;
+  padding: 18px;
+  opacity: 1;
+}
+/* .App {
   display: flex;
   flex-direction: column;
   top: 0px;
@@ -17,9 +22,7 @@
 
 .DiagnosisHistory-DiagnosticList {
   flex-basis: 766px;
-  /* flex-grow: 3; */
 }
 .Profile-LabResults {
   flex-basis: 367px;
-  /* flex-grow: 2; */
-}
+} */

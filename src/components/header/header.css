@@ -1,18 +1,9 @@
-.Header-content {
-  max-width: 1564px;
-  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  border-radius: 70px;
-  margin: 18px;
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 72px;
-  opacity: 1;
-  padding: 12px 32px;
-}
-.practitioner-settings{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  padding: 14px 32px;
+  border-radius: 70px;
 }

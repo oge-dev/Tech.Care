@@ -1,0 +1,50 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+}
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 8px;
+}
+.nav-item img {
+  height: 17px;
+}
+.Overview img {
+  max-width: 16px;
+}
+.Patients img {
+  max-width: 24px;
+}
+.Schedule img {
+  max-width: 15px;
+}
+.Message img {
+  max-width: 19px;
+}
+.Transactions img {
+  max-width: 22px;
+}
+.nav-item P {
+  font-family: var(--unnamed-font-family-manrope);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-bold);
+  font-size: var(--unnamed-font-size-14);
+  color: var(--unnamed-color-072635);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  /* line-height: var(--unnamed-line-spacing-19); */
+}
+
+.navBar .Patients {
+  background: var(--activestate_bg_1) 0% 0% no-repeat padding-box;
+  background: #01f0d0 0% 0% no-repeat padding-box;
+  border-radius: 41px;
+  width: 122px;
+  height: 41px;
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+}
+

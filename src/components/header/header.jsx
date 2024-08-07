@@ -1,23 +1,16 @@
 import React from "react";
 import "./header.css";
 import Logo from "./logo/logo";
-import Menu from "./menu/menu";
-import Practitioner from "./PractitionerSettings/practitioner";
-import Settings from "./PractitionerSettings/settings";
+import NavBar from "./navBar/navBar";
+import Practitioner from "./practitioner/practitioner";
+import "./header.css";
 
 const Header = () => {
   return (
-    <div className="Header-content">
-      <div className="logo">
-        <Logo />
-      </div>
-      <div className="menu">
-        <Menu />
-      </div>
-      <div className="practitioner-settings">
-        <Practitioner />
-        <Settings />
-      </div>
+    <div className="header">
+      <Logo />
+      <NavBar />
+      <Practitioner />
     </div>
   );
 };
