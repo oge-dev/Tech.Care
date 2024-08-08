@@ -1,9 +1,17 @@
+.patients-outlet-wrapper {
+  display: flex;
+  flex-direction: row;
+}
 .patients-container {
-  max-width: 367px;
+  /* max-width: 367px; */
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 16px;
-
+  flex: 1;
+  margin-top: 32px;
+}
+.outlet {
+  flex: 3;
   margin-top: 32px;
 }
 .patients-header {
@@ -36,9 +44,11 @@
   align-items: center;
   cursor: pointer;
   padding: 20px;
+  text-decoration: none;
+  color: inherit;
 }
-.patients:hover,
-.patients:active {
+/* Style for the active patient item */
+.patients.active {
   background: var(--activestate_bg_2) 0% 0% no-repeat padding-box;
   background: #d8fcf7 0% 0% no-repeat padding-box;
 }
@@ -76,7 +86,7 @@
   color: #707070;
   text-align: left;
 }
-.Horizontal-dotted-line img{
+.Horizontal-dotted-line {
   width: 18px;
   height: 4px;
 }

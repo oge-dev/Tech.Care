@@ -1,0 +1,11 @@
+.medical-records {
+  display: flex;
+  flex-direction: row;
+}
+.history-list {
+  flex: 2;
+  margin: 0 32px;
+}
+.information-results {
+  flex: 1;
+}
