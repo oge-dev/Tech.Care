@@ -1,10 +1,16 @@
-/* .diagnosisHistory{
-    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-background: #FFFFFF 0% 0% no-repeat padding-box;
-border-radius: 16px;
-padding: 20px;
-margin-bottom: 32px;
+/*
+.medical-rate{
+    display: flex;
+    flex-direction: row;
+} */
+.diagnosisHistory {
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 32px;
 }
+
 .diagnosisHistory h2{
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-33) var(--unnamed-font-family-manrope);
     letter-spacing: var(--unnamed-character-spacing-0);
@@ -13,117 +19,111 @@ margin-bottom: 32px;
     font: normal normal 800 24px/33px Manrope;
     letter-spacing: 0px;
     color: #072635;
+    margin-bottom: 40px;
 }
-.diagnosisHistory ul li{
-    list-style: none;
+.chart-container{
+    display: flex;
+    background: #F4F0FE 0% 0% no-repeat padding-box;
+border-radius: 12px;
+padding: 16px;
 }
-.medical-rate{
-    display: flex;
-    flex-direction: row;
-} */
-.diagnosisHistory {
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
-    background-color: #f7f8fc;
-    border-radius: 8px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  h2 {
-    color: #3e4a66;
-    margin-bottom: 1rem;
-  }
-  
-  .chart-container {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2rem;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  h3 {
-    margin: 0;
-    color: #3e4a66;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  
-  select {
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ced4da;
-    background: #fff;
-  }
-  
-  .legend {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem;
-    color: #3e4a66;
-  }
-  
-  .medical-rates {
-    display: flex;
-    justify-content: space-around;
-    background: #f7f8fc;
-  }
-  
-  .rate {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+.chart{
+    max-width: 446.71px;
+   width: 70%;
+}
+.legend{
+    max-width: 208px;
     width: 30%;
-  }
-  
-  .icon {
-    margin-bottom: 10px;
-  }
-  
-  .respiratory {
-    background: url('../../../assets/Respiratory_rate.png') no-repeat center center;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-  }
-  
-  .temperature {
-    background: url('../../../assets/Temperature.png') no-repeat center center;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-  }
-  
-  .heart {
-    background: url('../../../assets/HeartBPM.png') no-repeat center center;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-  }
-  
-  .rate-title {
-    font-size: 1rem;
-    color: #3e4a66;
-  }
-  
-  .rate-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0.5rem 0;
-  }
-  
-  .rate-status {
-    color: #858585;
-    font-size: 0.875rem;
-  }
-  
+}
+/* .chart-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin: 0;
+  color: #3e4a66;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  background: #fff;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  color: #3e4a66;
+}
+
+.medical-rates {
+  display: flex;
+  justify-content: space-around;
+  background: #f7f8fc;
+}
+
+.rate {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  width: 30%;
+}
+
+.icon {
+  margin-bottom: 10px;
+}
+
+.respiratory {
+  background: url("../../../assets/Respiratory_rate.png") no-repeat center
+    center;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.temperature {
+  background: url("../../../assets/Temperature.png") no-repeat center center;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.heart {
+  background: url("../../../assets/HeartBPM.png") no-repeat center center;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+.rate-title {
+  font-size: 1rem;
+  color: #3e4a66;
+}
+
+.rate-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.rate-status {
+  color: #858585;
+  font-size: 0.875rem;
+} */

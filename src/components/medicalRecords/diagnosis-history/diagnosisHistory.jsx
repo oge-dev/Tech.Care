@@ -21,7 +21,6 @@ const DiagnosisHistory = ({ patients }) => {
   const filterDiagnosisHistory = () => {
     if (!patient || !patient.diagnosis_history) return [];
 
-    const currentDate = new Date();
     const filteredHistory = patient.diagnosis_history.filter((diagnosis) => {
       const diagnosisDate = new Date(
         `${diagnosis.year}-${
@@ -53,7 +52,7 @@ const DiagnosisHistory = ({ patients }) => {
   if (!filteredHistory.length) return <p>No diagnosis history available.</p>;
 
   const labels = filteredHistory.map(
-    (diagnosis) => `${diagnosis.month} ${diagnosis.year}`
+    (diagnosis) => `${diagnosis.month.slice(0, 3)}, ${diagnosis.year}`
   );
   const systolicData = filteredHistory.map(
     (diagnosis) => diagnosis.blood_pressure.systolic.value
@@ -61,10 +60,6 @@ const DiagnosisHistory = ({ patients }) => {
   const diastolicData = filteredHistory.map(
     (diagnosis) => diagnosis.blood_pressure.diastolic.value
   );
-  const systolicValue = filteredHistory[0].blood_pressure.systolic.value;
-  const systolicLevels = filteredHistory[0].blood_pressure.systolic.levels;
-  const diastolicValue = filteredHistory[0].blood_pressure.diastolic.value;
-  const diastolicLevels = filteredHistory[0].blood_pressure.diastolic.levels;
 
   // Define some sample chart colors
   const CHART_COLORS = {
@@ -131,46 +126,59 @@ const DiagnosisHistory = ({ patients }) => {
     <div className="diagnosisHistory">
       <h2>Diagnosis History</h2>
       <div className="chart-container">
-        <div className="header">
-          <h3>Blood Pressure</h3>
-          <select
-            id="timeRange"
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-          >
-            <option value="Last 6 Months">Last 6 Months</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-          </select>
+        <div className="chart">
+          <div className="diagnosisHistory-header">
+            <h3>Blood Pressure</h3>
+            <select
+              id="timeRange"
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+            >
+              <option value="Last 6 Months">Last 6 Months</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+            </select>
+          </div>
+          <Line data={config.data} options={config.options} />
         </div>
-        <Line data={config.data} options={config.options} />
+
         <div className="legend">
           <div>
-            <span
-              style={{
-                display: "inline-block",
-                width: "10px",
-                height: "10px",
-                backgroundColor: CHART_COLORS.red,
-                marginRight: "5px",
-                borderRadius: "50%",
-              }}
-            ></span>
-            <span>Systolic: {systolicValue}</span> <small>{systolicLevels}</small>
+            <div>
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "10px",
+                  height: "10px",
+                  backgroundColor: CHART_COLORS.red,
+                  marginRight: "5px",
+                  borderRadius: "50%",
+                }}
+              ></span>
+              <span>Systolic</span>
+            </div>
+
+            <div>{filteredHistory[0].blood_pressure.systolic.value}</div>
+            <div>{filteredHistory[0].blood_pressure.systolic.levels}</div>
           </div>
           <div>
-            <span
-              style={{
-                display: "inline-block",
-                width: "10px",
-                height: "10px",
-                backgroundColor: CHART_COLORS.blue,
-                marginRight: "5px",
-                borderRadius: "50%",
-              }}
-            ></span>
-            <span>Diastolic: {diastolicValue}</span> <small>{diastolicLevels}</small>
+            <div>
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "10px",
+                  height: "10px",
+                  backgroundColor: CHART_COLORS.blue,
+                  marginRight: "5px",
+                  borderRadius: "50%",
+                }}
+              ></span>
+              <span>Diastolic</span>
+            </div>
+
+            <div>{filteredHistory[0].blood_pressure.diastolic.value}</div>
+            <div>{filteredHistory[0].blood_pressure.diastolic.levels}</div>
           </div>
         </div>
       </div>
@@ -180,7 +188,9 @@ const DiagnosisHistory = ({ patients }) => {
           <div className="icon respiratory"></div>
           <div className="rate-details">
             <p className="rate-title">Respiratory Rate</p>
-            <p className="rate-value">{filteredHistory[0].respiratory_rate.value} bpm</p>
+            <p className="rate-value">
+              {filteredHistory[0].respiratory_rate.value} bpm
+            </p>
             <p className="rate-status">Normal</p>
           </div>
         </div>
@@ -188,7 +198,9 @@ const DiagnosisHistory = ({ patients }) => {
           <div className="icon temperature"></div>
           <div className="rate-details">
             <p className="rate-title">Temperature</p>
-            <p className="rate-value">{filteredHistory[0].temperature.value}°F</p>
+            <p className="rate-value">
+              {filteredHistory[0].temperature.value}°F
+            </p>
             <p className="rate-status">Normal</p>
           </div>
         </div>
@@ -196,7 +208,9 @@ const DiagnosisHistory = ({ patients }) => {
           <div className="icon heart"></div>
           <div className="rate-details">
             <p className="rate-title">Heart Rate</p>
-            <p className="rate-value">{filteredHistory[0].heart_rate.value} bpm</p>
+            <p className="rate-value">
+              {filteredHistory[0].heart_rate.value} bpm
+            </p>
             <p className="rate-status">Lower than Average</p>
           </div>
         </div>
