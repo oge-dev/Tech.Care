@@ -24,7 +24,9 @@ const Patients = () => {
         },
       })
       .then((response) => {
-        setPatients(response.data);
+        // Limit the number of patients to 12
+      const limitedPatients = response.data.slice(0, 12);
+        setPatients(limitedPatients);
         setLoading(false);
       })
       .catch((error) => {

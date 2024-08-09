@@ -2,10 +2,27 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./diagnosisHistory.css";
 import { Line } from "react-chartjs-2";
-import { Chart, registerables } from "chart.js";
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
 
 // Register the necessary components
-Chart.register(...registerables);
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale
+);
 
 const DiagnosisHistory = ({ patients }) => {
   const { id } = useParams();
@@ -18,6 +35,7 @@ const DiagnosisHistory = ({ patients }) => {
     }
   }, [id, patients]);
 
+  // Function to filter diagnosis history based on the selected filter
   const filterDiagnosisHistory = () => {
     if (!patient || !patient.diagnosis_history) return [];
 
@@ -47,11 +65,8 @@ const DiagnosisHistory = ({ patients }) => {
     return filteredHistory;
   };
 
+  const DATA_COUNT = 6;
   const filteredHistory = filterDiagnosisHistory();
-
-  // Ensure that filteredHistory is not empty before accessing its properties
-  if (!filteredHistory.length) return <p>No diagnosis history available.</p>;
-
   const labels = filteredHistory.map(
     (diagnosis) => `${diagnosis.month} ${diagnosis.year}`
   );
@@ -61,10 +76,6 @@ const DiagnosisHistory = ({ patients }) => {
   const diastolicData = filteredHistory.map(
     (diagnosis) => diagnosis.blood_pressure.diastolic.value
   );
-  const systolicValue = filteredHistory[0].blood_pressure.systolic.value;
-  const systolicLevels = filteredHistory[0].blood_pressure.systolic.levels;
-  const diastolicValue = filteredHistory[0].blood_pressure.diastolic.value;
-  const diastolicLevels = filteredHistory[0].blood_pressure.diastolic.levels;
 
   // Define some sample chart colors
   const CHART_COLORS = {
@@ -72,67 +83,62 @@ const DiagnosisHistory = ({ patients }) => {
     blue: "#7E6CAB",
   };
 
+  // Define months array manually
+  const months = Array.from({ length: DATA_COUNT }, (_, i) => `Month ${i + 1}`);
+
   const config = {
     data: {
       labels: labels,
       datasets: [
         {
-          label: `Systolic`,
+          label: "Systolic",
           data: systolicData,
           borderColor: CHART_COLORS.red,
           backgroundColor: CHART_COLORS.red,
           tension: 0.4, // Adjust this value for more or less curve
-          fill: false,
-          pointBackgroundColor: CHART_COLORS.red,
         },
         {
-          label: `Diastolic`,
+          label: "Diastolic",
           data: diastolicData,
           borderColor: CHART_COLORS.blue,
           backgroundColor: CHART_COLORS.blue,
           tension: 0.4, // Adjust this value for more or less curve
-          fill: false,
-          pointBackgroundColor: CHART_COLORS.blue,
         },
       ],
     },
     options: {
       responsive: true,
       plugins: {
-        legend: {
-          display: false,
+        title: {
+          display: true,
         },
       },
       scales: {
         y: {
           min: 60,
           max: 180,
-          ticks: {
-            stepSize: 20,
-            color: "#858585",
-          },
-          grid: {
-            color: "#E8E8E8",
-          },
-        },
-        x: {
-          ticks: {
-            color: "#858585",
-          },
-          grid: {
-            display: false,
-          },
         },
       },
     },
   };
 
+  const graphStyle = {
+    minHeight: "10rem",
+    maxWidth: "540px",
+    width: "100%",
+    padding: "0.5rem",
+  };
+
+  if (!patient) return <p>Loading...</p>;
+
   return (
     <div className="diagnosisHistory">
       <h2>Diagnosis History</h2>
-      <div className="chart-container">
-        <div className="header">
-          <h3>Blood Pressure</h3>
+      {filterDiagnosisHistory().length > 0 ? (
+        <>
+        <div style={graphStyle}>
+        <h3>Bloood Pressure</h3>
+        <div className="filter-container">
           <select
             id="timeRange"
             value={filter}
@@ -145,62 +151,45 @@ const DiagnosisHistory = ({ patients }) => {
           </select>
         </div>
         <Line data={config.data} options={config.options} />
-        <div className="legend">
-          <div>
-            <span
-              style={{
-                display: "inline-block",
-                width: "10px",
-                height: "10px",
-                backgroundColor: CHART_COLORS.red,
-                marginRight: "5px",
-                borderRadius: "50%",
-              }}
-            ></span>
-            <span>Systolic: {systolicValue}</span> <small>{systolicLevels}</small>
-          </div>
-          <div>
-            <span
-              style={{
-                display: "inline-block",
-                width: "10px",
-                height: "10px",
-                backgroundColor: CHART_COLORS.blue,
-                marginRight: "5px",
-                borderRadius: "50%",
-              }}
-            ></span>
-            <span>Diastolic: {diastolicValue}</span> <small>{diastolicLevels}</small>
-          </div>
-        </div>
+        <ul>
+          <li>
+            Systolic: {filteredHistory[0].blood_pressure.systolic.value} (
+            {filteredHistory[0].blood_pressure.systolic.levels})
+          </li>
+          <li>
+            Diastolic: {filteredHistory[0].blood_pressure.diastolic.value} (
+            {filteredHistory[0].blood_pressure.diastolic.levels})
+          </li>
+        </ul>
       </div>
 
-      <div className="medical-rates">
-        <div className="rate">
-          <div className="icon respiratory"></div>
-          <div className="rate-details">
-            <p className="rate-title">Respiratory Rate</p>
-            <p className="rate-value">{filteredHistory[0].respiratory_rate.value} bpm</p>
-            <p className="rate-status">Normal</p>
+      <div>
+        <div className="medical-rate">
+          <div>
+            <img src="" alt="Respiratory" />
+            <p>Respiratory Rate</p>
+            <p>{filteredHistory[0].respiratory_rate.value}&nbsp;bpm</p>
+            <p>{filteredHistory[0].respiratory_rate.levels}</p>
           </div>
-        </div>
-        <div className="rate">
-          <div className="icon temperature"></div>
-          <div className="rate-details">
-            <p className="rate-title">Temperature</p>
-            <p className="rate-value">{filteredHistory[0].temperature.value}°F</p>
-            <p className="rate-status">Normal</p>
+          <div>
+            <img src="" alt="Temperature" />
+            <p>Temperature</p>
+            <p>{filteredHistory[0].temperature.value}&deg;F</p>
+            <p>{filteredHistory[0].temperature.levels}</p>
           </div>
-        </div>
-        <div className="rate">
-          <div className="icon heart"></div>
-          <div className="rate-details">
-            <p className="rate-title">Heart Rate</p>
-            <p className="rate-value">{filteredHistory[0].heart_rate.value} bpm</p>
-            <p className="rate-status">Lower than Average</p>
+          <div>
+            <img src="" alt="Heart" />
+            <p>Heart Rate</p>
+            <p>{filteredHistory[0].heart_rate.value}&nbsp;bpm</p>
+            <p>{filteredHistory[0].heart_rate.levels}</p>
           </div>
         </div>
       </div>
+        </>
+      ) : (
+        <p>No diagnosis history available.</p>
+      )}
+      
     </div>
   );
 };
