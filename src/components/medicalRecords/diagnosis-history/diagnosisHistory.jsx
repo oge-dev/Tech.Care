@@ -43,7 +43,7 @@ const DiagnosisHistory = ({ patients }) => {
       }
     });
 
-    return filteredHistory;
+    return filteredHistory.reverse();
   };
 
   const filteredHistory = filterDiagnosisHistory();
@@ -115,7 +115,7 @@ const DiagnosisHistory = ({ patients }) => {
             color: "#858585",
           },
           grid: {
-            display: false,
+            color: false,
           },
         },
       },
@@ -156,12 +156,17 @@ const DiagnosisHistory = ({ patients }) => {
                   borderRadius: "50%",
                 }}
               ></span>
-              <span>Systolic</span>
+              <span className="pressure-title">Systolic</span>
             </div>
 
-            <div>{filteredHistory[0].blood_pressure.systolic.value}</div>
-            <div>{filteredHistory[0].blood_pressure.systolic.levels}</div>
+            <div className="pressure-value">
+              {filteredHistory[0].blood_pressure.systolic.value}
+            </div>
+            <div className="pressure-levels">
+              {filteredHistory[0].blood_pressure.systolic.levels}
+            </div>
           </div>
+          <hr className="horizontal-line" />
           <div>
             <div>
               <span
@@ -174,44 +179,54 @@ const DiagnosisHistory = ({ patients }) => {
                   borderRadius: "50%",
                 }}
               ></span>
-              <span>Diastolic</span>
+              <span className="pressure-title">Diastolic</span>
             </div>
 
-            <div>{filteredHistory[0].blood_pressure.diastolic.value}</div>
-            <div>{filteredHistory[0].blood_pressure.diastolic.levels}</div>
+            <div className="pressure-value">
+              {filteredHistory[0].blood_pressure.diastolic.value}
+            </div>
+            <div className="pressure-levels">
+              {filteredHistory[0].blood_pressure.diastolic.levels}
+            </div>
           </div>
         </div>
       </div>
 
       <div className="medical-rates">
-        <div className="rate">
+        <div className="rate respiratory-rate">
           <div className="icon respiratory"></div>
           <div className="rate-details">
             <p className="rate-title">Respiratory Rate</p>
             <p className="rate-value">
               {filteredHistory[0].respiratory_rate.value} bpm
             </p>
-            <p className="rate-status">Normal</p>
+            <p className="rate-status">
+              {filteredHistory[0].respiratory_rate.levels}
+            </p>
           </div>
         </div>
-        <div className="rate">
+        <div className="rate temperature-rate">
           <div className="icon temperature"></div>
           <div className="rate-details">
             <p className="rate-title">Temperature</p>
             <p className="rate-value">
-              {filteredHistory[0].temperature.value}°F
+              {filteredHistory[0].temperature.value} &deg;F
             </p>
-            <p className="rate-status">Normal</p>
+            <p className="rate-status">
+              {filteredHistory[0].temperature.levels}
+            </p>
           </div>
         </div>
-        <div className="rate">
+        <div className="rate heart-rate">
           <div className="icon heart"></div>
           <div className="rate-details">
             <p className="rate-title">Heart Rate</p>
             <p className="rate-value">
               {filteredHistory[0].heart_rate.value} bpm
             </p>
-            <p className="rate-status">Lower than Average</p>
+            <p className="rate-status">
+              {filteredHistory[0].heart_rate.levels}
+            </p>
           </div>
         </div>
       </div>

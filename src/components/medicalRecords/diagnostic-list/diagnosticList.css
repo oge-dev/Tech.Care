@@ -1,4 +1,58 @@
-.diagnostic-list{
-    padding: 20px 0;
-    margin: 18px;
+.diagnosis-list {
+  margin-top: 32px;
+  max-width: 766px;
+  /* min-height: 349px; */
+  min-height: 449px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  padding: 20px;
+  overflow-y: auto;
+}
+.diagnosis-list h2 {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800)
+    var(--unnamed-font-size-24) / var(--unnamed-line-spacing-33)
+    var(--unnamed-font-family-manrope);
+  font: normal normal 800 24px/33px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635);
+  text-align: left;
+  margin-bottom: 40px;
+}
+.diagnosis-list table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+.diagnosis-list table thead tr th:nth-of-type(1) {
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.diagnosis-list table thead tr th:nth-of-type(3) {
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.diagnosis-list table thead tr {
+  background: #f6f7f8 0% 0% no-repeat padding-box;
+  height: 48px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold)
+    var(--unnamed-font-size-14) / var(--unnamed-line-spacing-19)
+    var(--unnamed-font-family-manrope);
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+}
+.diagnosis-list table tbody tr {
+  height: 59px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
+  font: normal normal normal 14px/19px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
 }

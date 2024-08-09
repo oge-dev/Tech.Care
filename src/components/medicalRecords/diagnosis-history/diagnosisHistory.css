@@ -1,8 +1,3 @@
-/*
-.medical-rate{
-    display: flex;
-    flex-direction: row;
-} */
 .diagnosisHistory {
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -11,119 +6,157 @@
   margin-bottom: 32px;
 }
 
-.diagnosisHistory h2{
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-33) var(--unnamed-font-family-manrope);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-072635);
-    text-align: left;
-    font: normal normal 800 24px/33px Manrope;
-    letter-spacing: 0px;
-    color: #072635;
-    margin-bottom: 40px;
+.diagnosisHistory h2 {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800)
+    var(--unnamed-font-size-24) / var(--unnamed-line-spacing-33)
+    var(--unnamed-font-family-manrope);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+  text-align: left;
+  font: normal normal 800 24px/33px Manrope;
+  letter-spacing: 0px;
+  color: #072635;
+  margin-bottom: 40px;
 }
-.chart-container{
-    display: flex;
-    background: #F4F0FE 0% 0% no-repeat padding-box;
-border-radius: 12px;
-padding: 16px;
+.chart-container {
+  display: flex;
+  background: #f4f0fe 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 298px;
 }
-.chart{
-    max-width: 446.71px;
-   width: 70%;
+.chart {
+  width: 80%;
 }
-.legend{
-    max-width: 208px;
-    width: 30%;
+.legend {
+  width: 20%;
 }
-/* .chart-container {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
-}
-
-.header {
+.diagnosisHistory-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
-
-h3 {
-  margin: 0;
-  color: #3e4a66;
-  font-size: 1rem;
-  font-weight: 600;
+.diagnosisHistory-header h3 {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold)
+    var(--unnamed-font-size-18) / var(--unnamed-line-spacing-24)
+    var(--unnamed-font-family-manrope);
+  font: normal normal bold 18px/24px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
 }
-
-select {
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ced4da;
-  background: #fff;
+.diagnosisHistory-header select {
+  border: none;
+  background-color: inherit;
+  margin-right: 30px;
+  outline: none;
 }
-
-.legend {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1rem;
-  color: #3e4a66;
+.diagnosisHistory-header option,
+.diagnosisHistory-header select {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-14) /
+    var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
+  font: normal normal normal 14px/19px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  text-align: right;
 }
-
+.diagnosisHistory .legend {
+  line-height: normal;
+}
+.diagnosisHistory .legend .pressure-title {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold)
+    var(--unnamed-font-size-14) / var(--unnamed-line-spacing-19)
+    var(--unnamed-font-family-manrope);
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  text-align: left;
+  margin-bottom: 8px;
+}
+.diagnosisHistory .legend .horizontal-line {
+  margin: 16.5px 0;
+}
+.diagnosisHistory .legend .pressure-value {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold)
+    22px/30px var(--unnamed-font-family-manrope);
+  font: normal normal bold 22px/30px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  text-align: left;
+  margin-bottom: 8px;
+}
+.diagnosisHistory .legend .pressure-levels {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-14) /
+    var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
+  font: normal normal normal 14px/19px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  text-align: left;
+  margin-bottom: 8px;
+}
 .medical-rates {
   display: flex;
-  justify-content: space-around;
-  background: #f7f8fc;
+  margin-top: 20px;
+  column-gap: 21px;
 }
 
 .rate {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  width: 30%;
+  flex: 1;
+  min-height: 242px;
+  border-radius: 12px;
+  padding: 16px;
 }
-
+.respiratory-rate {
+  background: #e0f3fa 0% 0% no-repeat padding-box;
+}
+.temperature-rate {
+  background: #ffe6e9 0% 0% no-repeat padding-box;
+}
+.heart-rate {
+  background: #ffe6f1 0% 0% no-repeat padding-box;
+}
 .icon {
-  margin-bottom: 10px;
+  width: 96px;
+  height: 96px;
 }
-
 .respiratory {
-  background: url("../../../assets/Respiratory_rate.png") no-repeat center
-    center;
-  width: 50px;
-  height: 50px;
-  display: inline-block;
+  background: transparent url("../../../assets/Respiratory_rate.png") 0% 0%
+    no-repeat padding-box;
 }
-
 .temperature {
-  background: url("../../../assets/Temperature.png") no-repeat center center;
-  width: 50px;
-  height: 50px;
-  display: inline-block;
+  background: transparent url("../../../assets/Temperature.png") 0% 0% no-repeat
+    padding-box;
 }
 
 .heart {
-  background: url("../../../assets/HeartBPM.png") no-repeat center center;
-  width: 50px;
-  height: 50px;
-  display: inline-block;
+  background: transparent url("../../../assets/HeartBPM.png") 0% 0% no-repeat
+    padding-box;
 }
-
-.rate-title {
-  font-size: 1rem;
-  color: #3e4a66;
+.medical-rates .rate-title {
+  margin-top: 16px;
+  font: var(--unnamed-font-style-normal) normal medium 16px/22px
+    var(--unnamed-font-family-manrope);
+  font: normal normal medium 16px/22px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  text-align: left;
 }
-
-.rate-value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
+.medical-rates .rate-value {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800)
+    30px/41px var(--unnamed-font-family-manrope);
+  font: normal normal 800 30px/41px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  text-align: left;
 }
-
-.rate-status {
-  color: #858585;
-  font-size: 0.875rem;
-} */
+.medical-rates .rate-status {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-14) /
+    var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
+  font: normal normal normal 14px/19px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  text-align: left;
+}

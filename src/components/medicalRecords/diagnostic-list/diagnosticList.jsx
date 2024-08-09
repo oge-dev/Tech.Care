@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./diagnosticList.css"
 
 const DiagnosticList = ({ patients }) => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const DiagnosticList = ({ patients }) => {
   if (!patient) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className="diagnosis-list">
       <h2>Diagnosis List</h2>
       <table>
         <thead>
