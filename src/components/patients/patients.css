@@ -1,18 +1,20 @@
 .patients-outlet-wrapper {
   display: flex;
   flex-direction: row;
+ 
 }
 .patients-container {
-  /* max-width: 367px; */
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 16px;
   flex: 1;
   margin-top: 32px;
+  overflow-y: scroll;
+  height: 1054px;
 }
 .outlet {
   flex: 3;
-  margin-top: 32px;
+  /* margin-top: 32px; */
 }
 .patients-header {
   display: flex;

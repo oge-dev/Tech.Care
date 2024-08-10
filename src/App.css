@@ -3,26 +3,8 @@
   padding: 18px;
   opacity: 1;
 }
-/* .App {
-  display: flex;
-  flex-direction: column;
-  top: 0px;
-  left: 0px;
-  max-width: 1600px;
-  height: 1195px;
-  background: #f6f7f8 0% 0% no-repeat padding-box;
-  opacity: 1;
+@media screen and (max-width: 1027px) {
+  .App {
+    width: 1600px;
+  }
 }
-
-.Patients-DiagnosisHistory-DiagnosticList-Profile-LabResults {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.DiagnosisHistory-DiagnosticList {
-  flex-basis: 766px;
-}
-.Profile-LabResults {
-  flex-basis: 367px;
-} */

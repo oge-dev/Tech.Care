@@ -1,0 +1,74 @@
+.patient-information {
+  min-height: 740px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.patient-information img {
+  max-width: 200px;
+  height: 200px;
+  /* Keep aspect ratio */
+  object-fit: cover;
+  /* Ensure the image covers the area */
+}
+
+.patient-information h2 {
+  margin: 24px 0 32px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-800)
+    var(--unnamed-font-size-24) / var(--unnamed-line-spacing-33)
+    var(--unnamed-font-family-manrope);
+  font: normal normal 800 24px/33px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+}
+
+.patient-details {
+  text-align: left;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.info img {
+  width: 42px;
+  height: 42px;
+  margin-right: 16px;
+}
+
+.info h3 {
+  font: var(--unnamed-font-style-normal) normal medium
+    var(--unnamed-font-size-14) / var(--unnamed-line-spacing-19)
+    var(--unnamed-font-family-manrope);
+  font: normal normal medium 14px/19px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  line-height: 19px;
+}
+.info p {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold)
+    var(--unnamed-font-size-14) / var(--unnamed-line-spacing-19)
+    var(--unnamed-font-family-manrope);
+  font: normal normal medium 14px/19px Manrope;
+  letter-spacing: var(--unnamed-character-spacing-0, 0);
+  color: var(--unnamed-color-072635, #072635);
+  line-height: 19px;
+}
+.patient-information .btn{
+text-align: center;
+margin-top: 40px;
+}
+.patient-information button {
+  background: var(--activestate_bg_1) 0% 0% no-repeat padding-box;
+  background: #01f0d0 0% 0% no-repeat padding-box;
+  border-radius: 41px;
+  width: 220px;
+  height: 41px;
+  border: none;
+  outline: none;
+}

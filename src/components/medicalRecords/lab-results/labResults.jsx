@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./labResults.css";
+import Download from "../../../assets/download_FILL0_wght300.svg";
 
 const LabResults = ({ patients }) => {
   const { id } = useParams();
@@ -14,14 +16,14 @@ const LabResults = ({ patients }) => {
   if (!patient) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className="labResults">
       <h2>Lab Results</h2>
       {patient.lab_results && patient.lab_results.length > 0 ? (
         <ul>
           {patient.lab_results.map((result, index) => (
             <li key={index}>
               <a href={result} download>
-                {result}
+                <span>{result}</span><img src={Download} alt="Download" />
               </a>
             </li>
           ))}

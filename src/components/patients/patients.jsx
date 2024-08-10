@@ -24,9 +24,7 @@ const Patients = () => {
         },
       })
       .then((response) => {
-        // Limit the number of patients to 12
-      const limitedPatients = response.data.slice(0, 12);
-        setPatients(limitedPatients);
+        setPatients(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -60,7 +58,7 @@ const Patients = () => {
                   </p>
                 </div>
               </div>
-              <div className=".Horizontal-dotted-line">
+              <div className="Horizontal-dotted-line">
                 <Image
                   src={HorizontalDottedIcon}
                   alt={"Horizontal dotted line"}

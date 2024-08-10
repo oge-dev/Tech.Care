@@ -4,8 +4,9 @@
 }
 .history-list {
   flex: 2;
-  margin: 0 32px;
+  margin: 32px 32px 0;
 }
 .information-results {
   flex: 1;
+  margin: 18px 0;
 }
