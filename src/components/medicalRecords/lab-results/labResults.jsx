@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./labResults.css";
 import Download from "../../../assets/download_FILL0_wght300.svg";
+import Image from "../../img";
 
 const LabResults = ({ patients }) => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const LabResults = ({ patients }) => {
           {patient.lab_results.map((result, index) => (
             <li key={index}>
               <a href={result} download>
-                <span>{result}</span><img src={Download} alt="Download" />
+                <span>{result}</span><Image src={Download} alt={"Download"} />
               </a>
             </li>
           ))}

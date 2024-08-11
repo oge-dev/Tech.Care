@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import "./diagnosisHistory.css";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
+import Image from "../../img";
+import ArrowUp from "../../../assets/ArrowUp.png";
+import ArrowDown from "../../../assets/ArrowDown.png";
 
 // Register the necessary components
 Chart.register(...registerables);
@@ -163,6 +166,7 @@ const DiagnosisHistory = ({ patients }) => {
               {filteredHistory[0].blood_pressure.systolic.value}
             </div>
             <div className="pressure-levels">
+              <Image src={ArrowUp} alt={"Arrow Up"} />
               {filteredHistory[0].blood_pressure.systolic.levels}
             </div>
           </div>
@@ -186,6 +190,7 @@ const DiagnosisHistory = ({ patients }) => {
               {filteredHistory[0].blood_pressure.diastolic.value}
             </div>
             <div className="pressure-levels">
+              <Image src={ArrowDown} alt={"Arrow Down"} />
               {filteredHistory[0].blood_pressure.diastolic.levels}
             </div>
           </div>
@@ -224,7 +229,8 @@ const DiagnosisHistory = ({ patients }) => {
             <p className="rate-value">
               {filteredHistory[0].heart_rate.value} bpm
             </p>
-            <p className="rate-status">
+            <p className="rate-status heart-rate-ArrowDown">
+              <Image src={ArrowDown} alt={"Arrow Down"} />
               {filteredHistory[0].heart_rate.levels}
             </p>
           </div>
